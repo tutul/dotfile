@@ -92,10 +92,9 @@ alias loadrc="source ~/.zshrc"
 alias sshbsd="mosh tutul@bsd3.cs.nctu.edu.tw"
 alias sshlinux="mosh tutul@linux4.cs.nctu.edu.tw"
 alias sshtutul='mosh --ssh="ssh -p 8527" tutul@140.113.207.63 -p 60001'
-#alias sshtutul="ssh 140.113.207.63 -l tutul -p 8527"
 alias sshtunnel="ssh -L 9000:www.cs.nctu.edu.tw:443 tutul@bsd3.cs.nctu.edu.tw"
 alias sshnetsec='mosh --ssh="ssh -p 8527" netsec@140.113.207.85 -p 60001'
-#alias sshnetsec='ssh 140.113.207.85 -p 8527 -l netsec'
+alias sshtriwalks='mosh tutul@www.triwalks.com'
 alias sshflood='ssh 140.113.207.85 -p 1908 -l skysky'
 
 reservice(){
