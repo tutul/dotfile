@@ -34,3 +34,10 @@ bind ^h
 bind h
 bind ^b
 bind ^u
+# Longer scroll history
+defscrollback 32768
+
+# Scroll up and down with Shift-PageUp/PageDown
+bindkey "^[[5;2~" eval "copy" "stuff ^u"
+bindkey -m "^[[5;2~" stuff ^u
+bindkey -m "^[[6;2~" stuff ^d
