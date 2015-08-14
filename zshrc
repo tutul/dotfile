@@ -81,21 +81,27 @@ if [ "$?WINDOW" ] ; then
 else
    export HISTFILE=~/.histfile/hist
 fi
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export PATH=${JAVA_HOME}/bin:$PATH
+export ECLIPSE_HOME=/opt/homebrew-cask/Caskroom/eclipse-ide/4.4.1/eclipse/
 alias hw="history -w ~/.histfile/last"
 alias hr="history -r ~/.histfile/last"
 alias ha="history -a ~/.histfile/last"
 alias hn="history -n ~/.histfile/last"
 alias hc="history -c"
 alias ntptime="sudo /etc/init.d/ntp stop;sudo ntpdate -s time.stdtime.gov.tw;"
-alias virc="vim ~/.zshrc"
+alias virc="vim ~/.zshrc;source ~/.zshrc"
 alias loadrc="source ~/.zshrc" 
 alias sshbsd="mosh tutul@bsd3.cs.nctu.edu.tw"
 alias sshlinux="mosh tutul@linux4.cs.nctu.edu.tw"
-alias sshtutul='mosh --ssh="ssh -p 8527" tutul@140.113.207.63 -p 60001'
+alias sshtutul='mosh --ssh="ssh -p 8527" tutul@140.113.208.150 -p 60001'
 alias sshtunnel="ssh -L 9000:www.cs.nctu.edu.tw:443 tutul@bsd3.cs.nctu.edu.tw"
-alias sshnetsec='mosh --ssh="ssh -p 8527" netsec@140.113.207.85 -p 60001'
+alias moshnetsec='mosh --ssh="ssh -p 8527" netsec@140.113.208.135 -p 60001'
+alias moshodl='mosh --ssh="ssh -p 8888" skysky@140.113.208.135 -p 60002'
+alias sshodl='ssh skysky@140.113.208.135 -p 8888'
+alias sshnetsec='ssh netsec@140.113.208.135 -p 8527'
 alias sshtriwalks='mosh tutul@www.triwalks.com'
-alias sshflood='ssh 140.113.207.85 -p 1908 -l skysky'
+alias sshflood='ssh 140.113.208.135 -p 1908 -l skysky'
 
 reservice(){
     for i in $(ls /etc/init.d/$1*); do $i restart; done
