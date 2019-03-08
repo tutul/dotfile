@@ -81,9 +81,9 @@ if [ "$?WINDOW" ] ; then
 else
    export HISTFILE=~/.histfile/hist
 fi
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export PATH=${JAVA_HOME}/bin:$PATH
-export ECLIPSE_HOME=/opt/homebrew-cask/Caskroom/eclipse-ide/4.4.1/eclipse/
+#export ECLIPSE_HOME=/opt/homebrew-cask/Caskroom/eclipse-ide/4.4.1/eclipse/
 alias hw="history -w ~/.histfile/last"
 alias hr="history -r ~/.histfile/last"
 alias ha="history -a ~/.histfile/last"
