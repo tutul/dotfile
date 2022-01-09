@@ -71,7 +71,12 @@ zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 PATH=${PATH}:${HOME}/bin
+
+# vim
 export EDITOR=/usr/bin/vim
+alias virc="vim ~/.zshrc;source ~/.zshrc"
+
+# history 
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
@@ -81,33 +86,17 @@ if [ "$?WINDOW" ] ; then
 else
    export HISTFILE=~/.histfile/hist
 fi
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
-export PATH=${JAVA_HOME}/bin:$PATH
-export ECLIPSE_HOME=/opt/homebrew-cask/Caskroom/eclipse-ide/4.4.1/eclipse/
-alias hw="history -w ~/.histfile/last"
-alias hr="history -r ~/.histfile/last"
-alias ha="history -a ~/.histfile/last"
-alias hn="history -n ~/.histfile/last"
-alias hc="history -c"
-alias ntptime="sudo /etc/init.d/ntp stop;sudo ntpdate -s time.stdtime.gov.tw;"
-alias virc="vim ~/.zshrc;source ~/.zshrc"
-alias loadrc="source ~/.zshrc" 
-alias sshbsd="mosh tutul@bsd3.cs.nctu.edu.tw"
-alias sshlinux="mosh tutul@linux4.cs.nctu.edu.tw"
-alias sshtutul='mosh --ssh="ssh -p 8527" tutul@140.113.208.150 -p 60001'
-alias sshtunnel="ssh -L 9000:www.cs.nctu.edu.tw:443 tutul@bsd3.cs.nctu.edu.tw"
-alias moshnetsec='mosh --ssh="ssh -p 8527" netsec@140.113.208.135 -p 60001'
-alias moshodl='mosh --ssh="ssh -p 8888" skysky@140.113.208.135 -p 60002'
-alias sshodl='ssh skysky@140.113.208.135 -p 8888'
-alias sshnetsec='ssh netsec@140.113.208.135 -p 8527'
-alias sshtriwalks='mosh tutul@www.triwalks.com'
-alias sshflood='ssh 140.113.208.135 -p 1908 -l skysky'
 
-reservice(){
-    for i in $(ls /etc/init.d/$1*); do $i restart; done
-}
+alias loadrc="source ~/.zshrc" 
 
 killscreen(){
     screen -X -S $1 quit 
 }
 TITLE="$SHORT_HOST"
+
+#home brew
+export PATH=/opt/homebrew/bin:${PATH}
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+TERM=xterm-256color

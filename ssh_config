@@ -2,6 +2,6 @@ Host github.com
   IdentitiesOnly yes
   HostName github.com
   User tutul
-  IdentityFile ~/.ssh/id_rsa_github
+  IdentityFile ~/.ssh/id_rsa_git
   # CheckHostIP yes
   # Port 22
